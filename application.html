@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
     <meta charset='utf-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
@@ -102,10 +102,12 @@ margin: 0;
 
                                 <p>
                                     <h6>Gender*</h6><br>
-                                    <input id="Mal" type="radio" name="gender" value="Male"  checked="checked">
+                                    <input id="Mal" type="radio" name="gender" value="Male" >
                                     <label for="Mal">Male</label><br><br>
                                     <input id="Fem" type="radio" name="gender" value="Female">
                                     <label for="Fem">Female</label>
+                                    <input id="dum1" type="radio" name="gender" value="summa" checked="checked">
+                                    <label for="dum1" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
@@ -121,7 +123,7 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
-                                    <input id="txt_cont"  name="number"  maxlength="10" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input id="txt_cont"  name="number"  maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     
                                 </p>
                                 <p>
@@ -130,7 +132,7 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
-                                    <input id="txt_nok" name="number" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input id="txt_nok" name="number" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </p>
                                 <p>
                                     <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
@@ -138,17 +140,21 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6>Any Exclusion in plans? *</h6><br>
-                                    <input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes"  checked="checked">
+                                    <input id="txt_Exc" type="radio" name="txt_AnyExc" value="Yes" >
                                     <label for="txt_Exc">Yes</label><br><br>
                                     <input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">
                                     <label for="txt_Excplan">No</label>
+                                    <input id="dum2" type="radio" name="txt_AnyExc" value="summa" checked="checked">
+                                    <label for="dum2" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6><br>
-                                    <input id="txt_policy" type="radio" name="txt_condition" value="Yes" checked="checked">
+                                    <input id="txt_policy" type="radio" name="txt_condition" value="Yes">
                                     <label for="txt_policy">Yes</label><br><br>
                                     <input id="txt_medicine" type="radio" name="txt_condition" value="No">
                                     <label for="txt_medicine">No</label>
+                                    <input id="dum3" type="radio" name="txt_condition" value="summa" checked="checked">
+                                    <label for="dum3" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>Any of the above is Yes, date of diagnosis</h6>
@@ -157,6 +163,8 @@ margin: 0;
                                     <label for="txt_Blood">Yes</label><br><br>
                                     <input id="txt_Pressure" type="radio" name="txt_Pressure" value="No">
                                     <label for="txt_Pressure">No</label>
+                                    <input id="dum4" type="radio" name="txt_Pressure" value="summa" checked="checked">
+                                    <label for="dum4" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>Diabetes : *</h6><br>
@@ -164,6 +172,8 @@ margin: 0;
                                     <label for="txt_DiabetesYes">Yes</label><br><br>
                                     <input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">
                                     <label for="txt_DiabetesNo">No</label>
+                                    <input id="dum5" type="radio" name="txt_Diabetes" value="summa" checked="checked">
+                                    <label for="dum5" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>High Cholesterol: *</h6><br>
@@ -171,6 +181,8 @@ margin: 0;
                                     <label for="txt_High">Yes</label><br><br>
                                     <input id="txt_Choles" type="radio" name="txt_highCol" value="No">
                                     <label for="txt_Choles">No</label>
+                                    <input id="dum6" type="radio" name="txt_highCol" value="summa" checked="checked">
+                                    <label for="dum6" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>Any Pending Claims for the current shield plan?*</h6><br>
@@ -178,6 +190,8 @@ margin: 0;
                                     <label for="txt_PendingYes">Yes</label><br><br>
                                     <input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">
                                     <label for="txt_PendingNo">No</label>
+                                    <input id="dum7" type="radio" name="txt_Pending" value="summa" checked="checked">
+                                    <label for="dum7" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6>Any other cash paying entitlement policies(MC or daily hospitalization cash benefits) *</h6><br>
@@ -185,6 +199,8 @@ margin: 0;
                                     <label for="txt_paying">Yes</label><br><br>
                                     <input id="txt_Policies" type="radio" name="MC_pressure" value="No">
                                     <label for="txt_Policies">No</label>
+                                    <input id="dum8" type="radio" name="MC_pressure" value="summa" checked="checked">
+                                    <label for="dum8" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
                                     <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
@@ -479,6 +495,10 @@ margin: 0;
         $(document).ready(function () {
             var user_id = localStorage.getItem('uid');
 
+            //alert(user_id);
+
+            $("#btn_DraftSave").show();
+
             $("#txt_user_id_bnd").val(user_id);
 
 
@@ -670,7 +690,10 @@ margin: 0;
 
                     var admission_number = localStorage.getItem('admission_number');
 
-                    var nricFront = "Demo file";
+                    var nricFront_file = $('#nricFT').val();
+                    localStorage.setItem('nricFront_file', nricFront_file);
+
+                    var nricFront = "Nil";
 
                     var appSave = "Complete";
                     $.ajax({
@@ -682,6 +705,9 @@ margin: 0;
                         success: function (data) {
                             //uploadDocNricBack();
                             sendEmail();
+                            //alert("Success...!");
+                            //location.reload();
+                            //window.location = "dashboad.html";
                         }
                     });
                 }
@@ -732,8 +758,9 @@ margin: 0;
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
                     $("#txt_name").focus();
-                } else if (admision_gender == "") {
+                } else if (admision_gender == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
                 } else if (admision_nric == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
                     $("#txt_NRIC").focus();
@@ -755,19 +782,19 @@ margin: 0;
                 } else if (admision_pa_plan == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
                     $("#txt_plan").focus();
-                } else if (admision_exclusion_plan == "") {
+                } else if (admision_exclusion_plan == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_pre_existing_condition == "") {
+                } else if (admision_pre_existing_condition == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_hign_bp == "") {
+                } else if (admision_hign_bp == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_diabetes == "") {
+                } else if (admision_diabetes == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_high_cholesterol == "") {
+                } else if (admision_high_cholesterol == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_pending_claims == "") {
+                } else if (admision_pending_claims == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
-                } else if (admision_cash_pay_mc == "") {
+                } else if (admision_cash_pay_mc == "summa") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
                 } else if (admision_cause_complaint == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -778,28 +805,49 @@ margin: 0;
                 } else if (admision_preferred_date_admission == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
                     $("#txt_DOA").focus();
-                } else {
+                } else if ($('input[type="radio"]:checked').length == 0) {
+                    alert('Please select one option');
+                }
+
+                else {
+                    // alert("Success");
                     $("#formApplication").hide();
                     $("#gifer").show();
-                    $.ajax({
+
+                    ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/saveApplication",
-                        data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
+                        url: "Functions.aspx/checkApplication",
+                        data: "{dadmission_number :'" + admission_number + "'}",
                         dataType: "json",
                         success: function (data) {
                             if (data.d === "true") {
-                                $("#gifer").hide();
-                                $("#formApplication").show();
-
-                                Materialize.toast('You will upload the preffered documents...!', 2000);
-                                localStorage.setItem('admission_number', admission_number);
-                                $('ul.tabs').tabs('select_tab', 'test2');
+                                alert("Same data");
                             } else {
-                                //alert("Add Error...");
+                                alert("New data...");
                             }
                         }
                     });
+
+                    /*$.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Functions.aspx/saveApplication",
+                    data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
+                    dataType: "json",
+                    success: function (data) {
+                    if (data.d === "true") {
+                    $("#gifer").hide();
+                    $("#formApplication").show();
+
+                    Materialize.toast('You will upload the preffered documents...!', 2000);
+                    localStorage.setItem('admission_number', admission_number);
+                    $('ul.tabs').tabs('select_tab', 'test2');
+                    } else {
+                    //alert("Add Error...");
+                    }
+                    }
+                    });*/
                 }
             });
 
@@ -819,7 +867,10 @@ margin: 0;
        function uploadDocNricBack() {
            var admission_number = localStorage.getItem('admission_number');
 
-           var nricBack = $('#nricBT').val();
+           var nricFront = "Nil";
+
+           var nricBack_file = $('#nricBT').val();
+           localStorage.setItem('nricFront_file', nricBack_file);
 
            var admision_status = "Pending";
            var status = "1";
@@ -834,7 +885,8 @@ margin: 0;
                data: "{admission_number :'" + admission_number + "',nricBack :'" + nricBack + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
                dataType: "json",
                success: function (data) {
-                   uploadDocFile1();
+                   //uploadDocFile1();
+                   sendEmail();
                }
            });
        }
@@ -1116,7 +1168,11 @@ margin: 0;
 
        function sendEmail() {
            var admission_number = localStorage.getItem('admission_number');
-           //alert(admission_number);
+           //alert(admission_number);   nricBack_file
+           var nricFront_file = localStorage.getItem('nricFront_file');
+           //var nricBack_file = localStorage.getItem('nricBack_file');
+
+
            $.ajax({
                type: "POST",
                contentType: "application/json; charset=utf-8",
@@ -1352,6 +1408,26 @@ margin: 0;
                     }
                     //alert("Application count : " + data.d.length);
                     var totApp = parseInt(data.d.length) + 1;
+                    //alert("Application count : " + totApp);
+
+                    //var appCount = localStorage.getItem('totApp');
+                    if (totApp == "null") {
+                        location.reload();
+                        //getApplicationCount();
+                    } else {
+                        var user_id = localStorage.getItem('uid');
+                        var appNo = user_id + "-APP-" + totApp + "-SG";
+                        $("#appNum").append(appNo);
+                        //alert(appNo);
+                    }
+
+                    if (appNo == "") {
+                        $("#gifer").show();
+                    } else {
+                        $("#gifer").hide();
+                    }
+
+
                     localStorage.setItem('totApp', totApp);
                 },
                 error: function (result) {
@@ -1399,10 +1475,6 @@ margin: 0;
             $("#appNum").empty();
             $("#appDate").append(today);
 
-            var appCount = localStorage.getItem('totApp');
-            var user_id = localStorage.getItem('uid');
-            var appNo = user_id + "-APP-" + appCount + "-SG";
-            $("#appNum").append(appNo);
         }
 
     </script>

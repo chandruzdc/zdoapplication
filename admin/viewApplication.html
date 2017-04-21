@@ -48,7 +48,7 @@
                 <ul class="right hide-on-med-and-down" style="margin-right:55px;">
                     <li><a href="index.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
-                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="sales.html">SALES AGENT</a></li>-->
                     <!--<li><a href="report.html">REPORT</a></li>-->
                     <li><a href="../index.html">LOGOUT</a></li>
                 </ul>
@@ -56,7 +56,7 @@
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="index.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
-                    <li><a href="sales.html">SALES AGENT</a></li>
+                    <!--<li><a href="sales.html">SALES AGENT</a></li>-->
                     <!--<li><a href="report.html">REPORT</a></li>-->
                     <li><a href="../index.html">LOGOUT</a></li>
                 </ul>
@@ -251,7 +251,9 @@
                         $("#Span23").empty();
                         $("#Span25").empty();
                         $("#Span26").empty();
+$("#appStatus_track").empty();
 
+                        $("#appStatus_track").append(data.d[0].admision_status);
                         $("#Span25").append(data.d[0].admission_number);
                         $("#Span26").append(data.d[0].admision_application_date);
                         $("#Span0").append(data.d[0].admision_name);

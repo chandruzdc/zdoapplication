@@ -330,7 +330,7 @@
                             if (data.d === "true") {
                                 //alert("success...!");
                                 var url = "http://test.zerodotone.net/mobile_application.html?" + encodedString;
-                                sendEmail(url, agentSessionName, agentPh);
+                                sendEmail(url, agentSessionName, agentPh,usersendEmail );
 
                             } else {
                                 //alert("Add Error...");
@@ -527,12 +527,12 @@
 
         <script>
 
-            function sendEmail(url, agentSessionName, agentPh) {
+            function sendEmail(url, agentSessionName, agentPh,usersendEmail ) {
                 $.ajax({
                     type: "POST",
                     contentType: "application/json; charset=utf-8",
                     url: "Functions.aspx/sendURLmail",
-                    data: "{url :'" + url + "',agentSessionName :'" + agentSessionName + "',agentPh :'" + agentPh + "'}",
+                    data: "{url :'" + url + "',agentSessionName :'" + agentSessionName + "',agentPh :'" + agentPh + "',usersendEmail :'" + usersendEmail + "'}",
                     dataType: "json",
                     success: function (data) {
                         alert("URL successfully sent to client..!");

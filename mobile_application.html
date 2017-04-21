@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <meta charset='utf-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
@@ -96,10 +96,12 @@
                                     <label for="Mal">Male</label><br><br>
                                     <input id="Fem" type="radio" name="gender" value="Female">
                                     <label for="Fem">Female</label>
+                                    <input id="dum1" type="radio" name="gender" value="summa" checked="checked">
+                                    <label for="dum1" style="display:none;">summa</label>
                                 </div><br>
                                 <div>
                                     <h6 for='txt_NRIC' style="text-align: left;">NRIC *</h6>
-                                    <input id="txt_NRIC" type="text" class="validate">
+                                    <input id="txt_NRIC" type="text" class="validate" maxlength="9">
                                 </div>
                                 <div>
                                     <h6 for='txt_dob' style="text-align: left;">Date of Birth *</h6>
@@ -111,7 +113,7 @@
                                 </div>
                                 <div>
                                     <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
-                                    <input id="txt_cont" type="number" class="validate">
+                                    <input id="txt_cont" type ="number" >
                                 </div>
                                 <div>
                                     <h6 for='txt_knok' style="text-align: left;"> Next of Kin (NOK) name and relationship *</h6>
@@ -119,7 +121,7 @@
                                 </div>
                                 <div>
                                     <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
-                                    <input id="txt_nok" type="number" class="validate">
+                                    <input id="txt_nok"  type ="number" >
                                 </div>
                                 <div>
                                     <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
@@ -131,6 +133,8 @@
                                     <label for="txt_Exc">Yes</label><br><br>
                                     <input id="txt_Excplan" type="radio" name="txt_AnyExc" value="No">
                                     <label for="txt_Excplan">No</label>
+                                    <input id="dum2" type="radio" name="txt_AnyExc" value="summa" checked="checked">
+                                    <label for="dum2" style="display:none;">summa</label>
                                 </div><br>
                                 <div id="e_txt_condition">
                                     <h6>Any Pre-existing conditions/ medical condition & medicine / past operation done not mentioned in policy *</h6><br>
@@ -138,6 +142,9 @@
                                     <label for="txt_policy">Yes</label><br><br>
                                     <input id="txt_medicine" type="radio" name="txt_condition" value="No">
                                     <label for="txt_medicine">No</label>
+                                    <input id="dum3" type="radio" name="txt_condition" value="summa" checked="checked">
+                                    <label for="dum3" style="display:none;">summa</label>
+                                    
                                 </div><br>
                                 <div id="e_txt_Pressure">
                                     <h6>Any of the above is Yes, date of diagnosis</h6>
@@ -146,6 +153,8 @@
                                     <label for="txt_Blood">Yes</label><br><br>
                                     <input id="txt_Pressure" type="radio" name="txt_Pressure" value="No">
                                     <label for="txt_Pressure">No</label>
+                                    <input id="dum4" type="radio" name="txt_Pressure" value="summa" checked="checked">
+                                    <label for="dum4" style="display:none;">summa</label>
                                 </div><br>
                                 <div id="e_txt_Diabetes">
                                     <h6>Diabetes : *</h6><br>
@@ -153,6 +162,8 @@
                                     <label for="txt_DiabetesYes">Yes</label><br><br>
                                     <input id="txt_DiabetesNo" type="radio" name="txt_Diabetes" value="No">
                                     <label for="txt_DiabetesNo">No</label>
+                                    <input id="dum5" type="radio" name="txt_Diabetes" value="summa" checked="checked">
+                                    <label for="dum5" style="display:none;">summa</label>
                                 </div><br>
                                 <div id="e_txt_highCol">
                                     <h6>High Cholesterol: *</h6><br>
@@ -160,6 +171,8 @@
                                     <label for="txt_High">Yes</label><br><br>
                                     <input id="txt_Choles" type="radio" name="txt_highCol" value="No">
                                     <label for="txt_Choles">No</label>
+                                    <input id="dum6" type="radio" name="txt_highCol" value="summa" checked="checked">
+                                    <label for="dum6" style="display:none;">summa</label>
                                 </div><br>
                                 <div id="e_txt_Pending">
                                    <h6>Any Pending Claims for the current shield plan?*</h6><br>
@@ -167,6 +180,8 @@
                                     <label for="txt_PendingYes">Yes</label><br><br>
                                     <input id="txt_PendingNo" type="radio" name="txt_Pending" value="No">
                                     <label for="txt_PendingNo">No</label>
+                                    <input id="dum7" type="radio" name="txt_Pending" value="summa" checked="checked">
+                                    <label for="dum7" style="display:none;">summa</label>
                                 </div>
                                 <br>
                                 <div id="e_MC_pressure">
@@ -175,6 +190,8 @@
                                     <label for="txt_paying">Yes</label><br><br>
                                     <input id="txt_Policies" type="radio" name="MC_pressure" value="No">
                                     <label for="txt_Policies">No</label>
+                                    <input id="dum8" type="radio" name="MC_pressure" value="summa" checked="checked">
+                                    <label for="dum8" style="display:none;">summa</label>
                                 </div><br>
                                 <div>
                                     <h6 for='txt_compliant' style="text-align: left;">Cause of complaint *</h6>
@@ -828,7 +845,7 @@
                  if (admision_name == "") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
                      $("#txt_name").focus();
-                 } else if (admision_gender == "") {
+                 } else if (admision_gender == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
                  } else if (admision_nric == "") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
@@ -851,19 +868,19 @@
                  } else if (admision_pa_plan == "") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
                      $("#txt_plan").focus();
-                 } else if (admision_exclusion_plan == "") {
+                 } else if (admision_exclusion_plan == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pre_existing_condition == "") {
+                 } else if (admision_pre_existing_condition == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_hign_bp == "") {
+                 } else if (admision_hign_bp == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_diabetes == "") {
+                 } else if (admision_diabetes == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_high_cholesterol == "") {
+                 } else if (admision_high_cholesterol == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pending_claims == "") {
+                 } else if (admision_pending_claims == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_cash_pay_mc == "") {
+                 } else if (admision_cash_pay_mc == "summa") {
                      Materialize.toast('Please fill all mandatory fields', 4000);
                  } else if (admision_cause_complaint == "") {
                      Materialize.toast('Please fill all mandatory fields', 4000);

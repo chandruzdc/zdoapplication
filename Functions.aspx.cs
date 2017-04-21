@@ -1381,7 +1381,7 @@ public static string updateApplication(string admission_number, string admision_
                             msg.From = new MailAddress(un, "ZDO");
                             msg.To.Add(main1);
                             msg.Subject = "Mail From Site :Application form";
-                            msg.Body = "Test Body message";
+                            msg.Body = "Test body message";
                             msg.Attachments.Add(new Attachment(new MemoryStream(bytes), "myDemo.pdf"));
                             msg.IsBodyHtml = true;
                             SmtpClient smtp = new SmtpClient();
@@ -1400,18 +1400,19 @@ public static string updateApplication(string admission_number, string admision_
 
 
     [WebMethod]
-    public static string sendURLmail(string url, string agentSessionName, string agentPh)
+    public static string sendURLmail(string url, string agentSessionName, string agentPh, string usersendEmail )
     {
-        string main1 = "hemachandru21@gmail.com";
+        //string main1 = "hemachandru21@gmail.com";
+string main1 = usersendEmail ;
         var un = "website@1migrate.net";
         var pass = "Welcome123!@#";
         MailMessage msg = new MailMessage();
-        msg.From = new MailAddress(un, "1Migrate");
+        msg.From = new MailAddress(un, "ZDO");
         msg.To.Add(main1);
         msg.Subject = "Mail From Site : Application form URL";
         msg.Body = "<br><br><div style='background-color: white;padding: 25px;border: 2px solid navy;margin: 25px;color:black;'><center><h1>Application URL</h1><br><br><table border='1' style='border-collapse: collapse;'> " +
                    "<table border='1' style='border-collapse: collapse;'><tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Name : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentSessionName + " </td></tr>" +
-                   "<tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Phone  : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentPh + "  </td></tr>" +
+                 //  "<tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Phone  : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentPh + "  </td></tr>" +
                    "<tr><td style='padding-top:10px;padding-bottem:10px;'>URL : </td><td style='padding-top:10px;padding-bottem:10px;'>" + url + "</td></tr>" +
                    "<table></center></div><br><br><br>";
         msg.IsBodyHtml = true;

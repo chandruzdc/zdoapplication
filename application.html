@@ -42,29 +42,32 @@ margin: 0;
         <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
     </div>
 
+    <div id="formApplication">
+
+
     <nav class="blue lighten-1" role="navigation">
-        <div class="nav-wrapper">
-            <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
-            <ul class="right hide-on-med-and-down" style="margin-right:55px;">
-                <li><a href="dashboad.html">DASHBOAD</a></li>
-                <li><a href="client_list.html">CLIENTS</a></li>
-                <li>
-                    <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName">Profile Name</span><i class="material-icons right">arrow_drop_down</i></a>
-                    <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
-                        <li><a href="index.html">LOG OUT</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="nav-wrapper">
+                <a id="logo-container" href="dashboad.html" class="brand-logo" style="margin-left:55px;">ZDO</a>
+                <ul class="right hide-on-med-and-down" style="margin-right:55px;">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                    <li>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
+                        <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
+                            <li><a href="index.html">LOG OUT</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="dashboad.html">DASHBOAD</a></li>
-                <li><a href="client_list.html">CLIENTS</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="dashboad.html">DASHBOAD</a></li>
+                    <li><a href="client_list.html">CLIENTS</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
 
-    <div class="container" id="formApplication">
+    <div class="container" >
         <!--Application form--><br>
         <h5 style="text-align:center">APPLICATION FORM</h5>
         <div class="row">
@@ -96,7 +99,7 @@ margin: 0;
                             <br />                           <div class="row">
                                 <p>
                                     <h6>Name*</h6>
-                                    <input id="txt_name" type="text" class="validate">
+                                    <input id="txt_name" type="text" class="">
                                     <input id="txt_user_id_bnd" type="text" class="validate" style="display:none;">
                                 </p>
 
@@ -123,7 +126,7 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_cont' style="text-align: left;">Contact *</h6>
-                                    <input id="txt_cont"  name="number"  maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input id="txt_cont"  name="number" class="validate"  maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                     
                                 </p>
                                 <p>
@@ -132,7 +135,7 @@ margin: 0;
                                 </p>
                                 <p>
                                     <h6 for='txt_nok' style="text-align: left;">Contact of NOK *</h6>
-                                    <input id="txt_nok" name="number" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+                                    <input id="txt_nok" name="number" type="text" maxlength="8" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
                                 </p>
                                 <p>
                                     <h6 style="" id="myMed">Type of shield plan (with or without rider) / PA plan & Inforce date *</h6>
@@ -157,7 +160,6 @@ margin: 0;
                                     <label for="dum3" style="display:none;">summa</label>
                                 </p><br>
                                 <p>
-                                    <h6>Any of the above is Yes, date of diagnosis</h6>
                                     <h6>High Blood Pressure : *</h6><br>
                                     <input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">
                                     <label for="txt_Blood">Yes</label><br><br>
@@ -184,6 +186,11 @@ margin: 0;
                                     <input id="dum6" type="radio" name="txt_highCol" value="summa" checked="checked">
                                     <label for="dum6" style="display:none;">summa</label>
                                 </p><br>
+                                <p>
+                                    <h6>Any of the above is Yes, date of diagnosis</h6>
+                                    <input class="datepicker_dod" id="Text1">
+                               
+                               </p>
                                 <p>
                                     <h6>Any Pending Claims for the current shield plan?*</h6><br>
                                     <input id="txt_PendingYes" type="radio" name="txt_Pending" value="Yes" checked="checked">
@@ -220,6 +227,13 @@ margin: 0;
                                 <p>
                                     <input id="insAgnetContact" type="text" class="validate" readonly>
                                 </p>
+
+                                <p>
+                                       <h6 for='rem' style="text-align: left;">Remarks</h6>
+                                       <textarea id="rem" class="materialize-textarea"></textarea>
+                                </p>
+
+
                                 <p>
                                     <center>
                                         <button type='submit' id='btn_DraftSave' class='col s12 btn btn-large blue lighten-1'>Next</button>
@@ -240,7 +254,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>NRIC FRONT</label><br>
-												<input type="file" id="nricF" onchange="nricFront();">
+												<input type="file" id="nricF">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -255,7 +269,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>NRIC BACK</label><br>
-												<input type="file" id="nricB" onchange="nricBack();">
+												<input type="file" id="nricB">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -273,7 +287,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 1</label><br>
-												<input type="file" id="f1" onchange="file1();">
+												<input type="file" id="f1">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -289,7 +303,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 2</label><br>
-												<input type="file" id="f2" onchange="file2();">
+												<input type="file" id="f2">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -305,7 +319,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 3</label><br>
-												<input type="file" id="f3" onchange="file3();">
+												<input type="file" id="f3">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -321,7 +335,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 4</label><br>
-												<input type="file" id="f4" onchange="file4();">
+												<input type="file" id="f4">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -342,7 +356,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 5</label><br>
-												<input type="file" id="f5" onchange="file5();">
+												<input type="file" id="f5">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -363,7 +377,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 6</label><br>
-												<input type="file" id="f6" onchange="file6();">
+												<input type="file" id="f6">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -384,7 +398,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 7</label><br>
-												<input type="file" id="f7" onchange="file7();">
+												<input type="file" id="f7">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -405,7 +419,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 8</label><br>
-												<input type="file" id="f8" onchange="file8();">
+												<input type="file" id="f8">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -426,7 +440,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 9</label><br>
-												<input type="file" id="f9" onchange="file9();">
+												<input type="file" id="f9">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -447,7 +461,7 @@ margin: 0;
 										<div class="col m7 s12">
 											<div class="file-field input-field">
 												<label>Document 10</label><br>
-												<input type="file" id="f10" onchange="file10();">
+												<input type="file" id="f10">
 												<div class="file-path-wrapper">
 													<input class="file-path validate" type="text">
 												</div>
@@ -457,18 +471,19 @@ margin: 0;
 								</div>
 							</div>
 							
-							<textarea id="nricFT" style="display:none;"></textarea>
-							<textarea id="nricBT" style="display:none;"></textarea>
-							<textarea id="f1T" style="display:none;"></textarea>
-							<textarea id="f2T" style="display:none;"></textarea>
-							<textarea id="f3T" style="display:none;"></textarea>
-							<textarea id="f4T" style="display:none;"></textarea>
-							<textarea id="f5T" style="display:none;"></textarea>
-							<textarea id="f6T" style="display:none;"></textarea>
-							<textarea id="f7T" style="display:none;"></textarea>
-							<textarea id="f8T" style="display:none;"></textarea>
-							<textarea id="f9T" style="display:none;"></textarea>
-							<textarea id="f10T" style="display:none;"></textarea>
+                            <p id="nricFT" style="display:none">Nil</p>
+                            <p id="nricBT" style="display:none">Nil</p>
+                            <p id="f1T" style="display:none">Nil</p>
+                            <p id="f2T" style="display:none">Nil</p>
+                            <p id="f3T" style="display:none">Nil</p>
+                            <p id="f4T" style="display:none">Nil</p>
+                            <p id="f5T" style="display:none">Nil</p>
+                            <p id="f6T" style="display:none">Nil</p>
+                            <p id="f7T" style="display:none">Nil</p>
+                            <p id="f8T" style="display:none">Nil</p>
+                            <p id="f9T" style="display:none">Nil</p>
+                            <p id="f10T" style="display:none">Nil</p>
+
 							
 								<p>
                                     <center>
@@ -483,19 +498,29 @@ margin: 0;
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/jquery-3.1.1.js"></script>
+   
 
-    <script src="session.js"></script>
+
+
+   </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script src="session.js"></script>
+        <script src="js/jquery-3.1.1.js"></script>
+
+
 
 
     <script>
         $(document).ready(function () {
-            var user_id = localStorage.getItem('uid');
+            
 
-            //alert(user_id);
+            $("#gifer").hide();
+            
+            
+
+            var user_id = localStorage.getItem('uid');
 
             $("#btn_DraftSave").show();
 
@@ -504,7 +529,7 @@ margin: 0;
 
             $('.datepicker_pdate').pickadate({
                 minDate: 0,
-                selectMonths: true, // Creates a dropdown to control month
+                selectMonths: true,
                 selectYears: 15,
                 format: 'dd-mm-yyyy',
                 min: new Date()
@@ -512,15 +537,11 @@ margin: 0;
 
             $('.datepicker_dob').pickadate({
                 maxDate: 0,
-                selectMonths: true, // Creates a dropdown to control month
+                selectMonths: true,
                 selectYears: 15,
                 format: 'dd-mm-yyyy',
                 max: new Date()
             });
-
-
-            //alert(user_id);
-            $("#gifer").hide();
 
             $("#img5").hide();
             $("#img6").hide();
@@ -562,18 +583,16 @@ margin: 0;
 
 
             $("#btn_compSave").click(function () {
-                var admision_slno = localStorage.getItem('totApp'); //no val
+                var admision_slno = localStorage.getItem('totApp');
                 var user_id = localStorage.getItem('uid');
 
-                //alert(user_id);
-
-                var admission_number = $('#appNum').text(); //no val
+                var admission_number = $('#appNum').text();
                 var admision_name = $('#txt_name').val();
                 var admision_gender = $('input[name="gender"]:checked').val();
                 var admision_nric = $("#txt_NRIC").val();
                 var admision_dob = $("#txt_dob").val();
-                var admision_application_date = $("#appDate").text();  //no val
-                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_application_date = $("#appDate").text();
+                var admision_time = (new Date().toString("hh:mm tt"));
                 var admision_occupation = $("#txt_occup").val();
                 var admision_contact = $("#txt_cont").val();
                 var admision_nok_name = $("#txt_knok").val();
@@ -589,23 +608,31 @@ margin: 0;
                 var admision_cause_complaint = $("#txt_compliant").val();
                 var admision_sign_symptoms = $("#txt_signSymp").val();
                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                var admision_insurance_agent_id = user_id; //no val
-                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                var admision_remarks_admin = "Nil"; //no val
-                var admision_remarks_agent = "Nil"; //no val
-                var admision_status = "Pending"; //no val
-                var status = "1"; //no val
+                var admision_insurance_agent_id = user_id;
+                var admision_insurance_agent_name = $("#insAgnetName").val();
+                var admision_insurance_agent_contact = $("#insAgnetContact").val();
+                var admision_remarks_admin = "Nil";
+                var admision_remarks_agent = "Nil";
+                
+                var admision_status = "Pending";
+                var status = "1";
                 var saveType = "web";
                 var submissionType = "normal";
-                //var appSave = "Draft";
-                //---------------previous-
-                var nricF = $('#nricF').val();
-                var nricB = $('#nricB').val();
-                var f1 = $('#f1').val();
-                var f2 = $('#f2').val();
-                var f3 = $('#f3').val();
-                var f4 = $('#f4').val();
+
+                var nricF = $('#nricFT').text();
+                var nricB = $('#nricBT').text();
+
+                var f1 = $('#f1T').text();
+                var f2 = $('#f2T').text();
+                var f3 = $('#f3T').text();
+                var f4 = $('#f4T').text();
+                var f5 = $('#f5T').text();
+                var f6 = $('#f6T').text();
+                var f7 = $('#f7T').text();
+                var f8 = $('#f8T').text();
+                var f9 = $('#f9T').text();
+                var f10 = $('#f10T').text();
+
 
                 if (admision_name == "") {
                     Materialize.toast('Please fill all mandatory fields', 4000);
@@ -677,11 +704,11 @@ margin: 0;
                     $("#txt_DOA").focus();
                 }
                 //----------------prev
-                else if (nricF == "") {
+                else if (nricF == "Nil") {
                     Materialize.toast('Please upload NRIC files', 4000);
-                } else if (nricB == "") {
+                } else if (nricB == "Nil") {
                     Materialize.toast('Please upload NRIC files', 4000);
-                } else if (f1 == "") {
+                } else if (f1 == "Nil") {
                     Materialize.toast('Please upload files', 4000);
                 }
                 else {
@@ -693,21 +720,40 @@ margin: 0;
                     var nricFront_file = $('#nricFT').val();
                     localStorage.setItem('nricFront_file', nricFront_file);
 
-                    var nricFront = "Nil";
+                    var nricF = $('#nricFT').text();
+                    var nricB = $('#nricBT').text();
+                    var f1 = $('#f1T').text();
+                    var f2 = $('#f2T').text();
+                    var f3 = $('#f3T').text();
+                    var f4 = $('#f4T').text();
+                    var f5 = $('#f5T').text();
+                    var f6 = $('#f6T').text();
+                    var f7 = $('#f7T').text();
+                    var f8 = $('#f8T').text();
+                    var f9 = $('#f9T').text();
+                    var f10 = $('#f10T').text();
 
+                    var admision_status = "Pending";
+                    var status = "1";
+                    var saveType = "web";
+                    var submissionType = "normal";
                     var appSave = "Complete";
+
+                    //admision_status :'" + admision_status + "', 
+                    //status :'" + status + "', 
+                    //saveType :'" + saveType + "', 
+                    //submissionType :'" + submissionType + "', 
+                    //appSave :'" + appSave + "'
+
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/update_ApplicationDocuments_nricFront",
-                        data: "{admission_number :'" + admission_number + "',nricFront :'" + nricFront + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                        url: "Functions.aspx/update_ApplicationDocuments",
+                        data: "{admission_number :'" + admission_number + "',admision_nric_front_screen :'" + nricF + "', admision_nric_back_screen :'" + nricB + "' , admision_policy_file1 :'" + f1 + "', admision_policy_file2 :'" + f2 + "', admision_policy_file3 :'" + f3 + "', admision_policy_file4 :'" + f4 + "', admision_policy_file5 :'" + f5 + "', admision_policy_file6 :'" + f6 + "', admision_policy_file7 :'" + f7 + "', admision_policy_file8 :'" + f8 + "', admision_policy_file9 :'" + f9 + "', admision_policy_file10 :'" + f10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_remarks_admin :'" + admision_remarks_admin + "'}",
                         dataType: "json",
                         success: function (data) {
-                            //uploadDocNricBack();
                             sendEmail();
-                            //alert("Success...!");
-                            //location.reload();
-                            //window.location = "dashboad.html";
+                            //alert("Success....!");
                         }
                     });
                 }
@@ -814,40 +860,50 @@ margin: 0;
                     $("#formApplication").hide();
                     $("#gifer").show();
 
-                    ajax({
+
+
+
+                    /*$.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
-                        url: "Functions.aspx/checkApplication",
+                        url: "Functions.aspx/getAmendSingle",
                         data: "{dadmission_number :'" + admission_number + "'}",
                         dataType: "json",
                         success: function (data) {
-                            if (data.d === "true") {
-                                alert("Same data");
-                            } else {
-                                alert("New data...");
+                            if (data.d === "false") {
+                                alert("False");
+                            }
+                            else {
+                                alert("true..!");
+                                SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType,appSave);
+                            }
+                        },
+                        error: function (result) {
+                            // alert("fail.......");
+                        }
+                    });*/
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/saveApplication",
+                        data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") 
+                            {
+                                $("#gifer").hide();
+                                $("#formApplication").show();
+                                Materialize.toast('You will upload the preffered documents...!', 2000);
+                                localStorage.setItem('admission_number', admission_number);
+                                $('ul.tabs').tabs('select_tab', 'test2');
+                            }
+                            else 
+                            {
+                                //alert("Add Error...");
                             }
                         }
                     });
-
-                    /*$.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "Functions.aspx/saveApplication",
-                    data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
-                    dataType: "json",
-                    success: function (data) {
-                    if (data.d === "true") {
-                    $("#gifer").hide();
-                    $("#formApplication").show();
-
-                    Materialize.toast('You will upload the preffered documents...!', 2000);
-                    localStorage.setItem('admission_number', admission_number);
-                    $('ul.tabs').tabs('select_tab', 'test2');
-                    } else {
-                    //alert("Add Error...");
-                    }
-                    }
-                    });*/
                 }
             });
 
@@ -864,315 +920,33 @@ margin: 0;
 
    <script>
 
-       function uploadDocNricBack() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var nricFront = "Nil";
-
-           var nricBack_file = $('#nricBT').val();
-           localStorage.setItem('nricFront_file', nricBack_file);
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
+       function SaveDataApplicationDraft(admision_slno, admission_number, admision_name, admision_gender, admision_nric, admision_dob, admision_application_date, admision_time, admision_occupation, admision_contact, admision_nok_name, admision_nok_contact, admision_pa_plan, admision_exclusion_plan, admision_pre_existing_condition, admision_hign_bp, admision_diabetes, admision_high_cholesterol, admision_pending_claims, admision_cash_pay_mc, admision_cause_complaint, admision_sign_symptoms, admision_preferred_date_admission, admision_insurance_agent_id, admision_insurance_agent_name, admision_insurance_agent_contact, admision_remarks_admin, admision_remarks_agent, admision_status, status, saveType, submissionType, appSave) {
+           //alert("Called");
+           alert(admision_slno + "---" + admission_number + "---" + admision_name + "---" + admision_gender + "---" + admision_nric + "---" + admision_dob + "---" + admision_application_date + "---" + admision_time + "---" + admision_occupation + "---" + admision_contact + "---" + admision_nok_name + "---" + admision_nok_contact + "---" + admision_pa_plan + "---" + admision_exclusion_plan + "---" + admision_pre_existing_condition + "---" + admision_hign_bp + "---" + admision_diabetes + "---" + admision_high_cholesterol + "---" + admision_pending_claims + "---" + admision_cash_pay_mc + "---" + admision_cause_complaint + "---" + admision_sign_symptoms + "---" + admision_preferred_date_admission + "---" + admision_insurance_agent_id + "---" + admision_insurance_agent_name + "---" + admision_insurance_agent_contact + "---" + admision_remarks_admin + "---" + admision_remarks_agent + "---" + admision_status + "---" + status + "---" + saveType + "---" + submissionType + "---" + appSave);
+           ajax({
                type: "POST",
                contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_nricBack",
-               data: "{admission_number :'" + admission_number + "',nricBack :'" + nricBack + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+               url: "Functions.aspx/saveApplication",
+               data: "{admision_slno :'" + admision_slno + "', admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_time :'" + admision_time + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_remarks_admin :'" + admision_remarks_admin + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_status:'" + admision_status + "', status:'" + status + "', saveType:'" + saveType + "', submissionType:'" + submissionType + "', appSave:'" + appSave + "'}",
                dataType: "json",
                success: function (data) {
-                   //uploadDocFile1();
-                   sendEmail();
+                   if (data.d === "true") {
+                       $("#gifer").hide();
+                       $("#formApplication").show();
+
+                       Materialize.toast('You will upload the preffered documents...!', 2000);
+                       localStorage.setItem('admission_number', admission_number);
+                       $('ul.tabs').tabs('select_tab', 'test2');
+                   } else {
+                       //alert("Add Error...");
+                   }
                }
-           });
+           });       
        }
-
-       function uploadDocFile1() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file1 = $('#f1T').val();
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file1",
-               data: "{admission_number :'" + admission_number + "',file1 :'" + file1 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile2();
-               }
-           });
-       }
-
-       function uploadDocFile2() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file2 = "";
-           if (file2 == "") {
-               file2 = "No file";
-           } else {
-               file2 = $('#f2T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file2",
-               data: "{admission_number :'" + admission_number + "',file2 :'" + file2 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile3();
-               }
-           });
-       }
-
-       function uploadDocFile3() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file3 = "";
-           if (file3 == "") {
-               file3 = "No file";
-           } else {
-               file3 = $('#f3T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file3",
-               data: "{admission_number :'" + admission_number + "',file3 :'" + file3 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile4();
-               }
-           });
-       }
-
-       function uploadDocFile4() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file4 = "";
-           if (file4 == "") {
-               file4 = "No file";
-           } else {
-               file4 = $('#f4T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file4",
-               data: "{admission_number :'" + admission_number + "',file4 :'" + file4 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile5();
-               }
-           });
-       }
-
-       function uploadDocFile5() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file5 = "";
-           if (file5 == "") {
-               file5 = "No file";
-           } else {
-               file5 = $('#f5T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file5",
-               data: "{admission_number :'" + admission_number + "',file5 :'" + file5 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile6();
-               }
-           });
-       }
-
-       function uploadDocFile6() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file6 = "";
-           if (file6 == "") {
-               file6 = "No file";
-           } else {
-               file6 = $('#f6T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file6",
-               data: "{admission_number :'" + admission_number + "',file6 :'" + file6 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile7();
-               }
-           });
-       }
-
-       function uploadDocFile7() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file7 = "";
-           if (file7 == "") {
-               file7 = "No file";
-           } else {
-               file5 = $('#f7T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file7",
-               data: "{admission_number :'" + admission_number + "',file7 :'" + file7 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile8();
-               }
-           });
-       }
-
-       function uploadDocFile8() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file8 = "";
-           if (file8 == "") {
-               file8 = "No file";
-           } else {
-               file8 = $('#f8T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file8",
-               data: "{admission_number :'" + admission_number + "',file8 :'" + file8 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile9();
-               }
-           });
-       }
-
-       function uploadDocFile9() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file9 = "";
-           if (file9 == "") {
-               file9 = "No file";
-           } else {
-               file9 = $('#f9T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file9",
-               data: "{admission_number :'" + admission_number + "',file9 :'" + file9 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   uploadDocFile10();
-               }
-           });
-       }
-
-       function uploadDocFile10() {
-           var admission_number = localStorage.getItem('admission_number');
-
-           var file10 = "";
-           if (file10 == "") {
-               file10 = "No file";
-           } else {
-               file10 = $('#f10T').val();
-           }
-
-           var admision_status = "Pending";
-           var status = "1";
-           var saveType = "web";
-           var submissionType = "normal";
-           var appSave = "Complete";
-
-           $.ajax({
-               type: "POST",
-               contentType: "application/json; charset=utf-8",
-               url: "Functions.aspx/update_ApplicationDocuments_file10",
-               data: "{admission_number :'" + admission_number + "',file10 :'" + file10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-               dataType: "json",
-               success: function (data) {
-                   sendEmail();
-               }
-           });
-       }
-
+      
        function sendEmail() {
            var admission_number = localStorage.getItem('admission_number');
-           //alert(admission_number);   nricBack_file
-           var nricFront_file = localStorage.getItem('nricFront_file');
-           //var nricBack_file = localStorage.getItem('nricBack_file');
-
-
+           //alert(admission_number); 
            $.ajax({
                type: "POST",
                contentType: "application/json; charset=utf-8",
@@ -1189,209 +963,6 @@ margin: 0;
            });
        }
 
-       //*************************************Upload documents***********************************************
-       //nric front
-       function nricFront() {
-           var nricF = document.getElementById("nricF").files;
-           if (nricF.length > 0) {
-               var fileToLoadNF = nricF[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var nricFT = document.getElementById
-                    (
-                        "nricFT"
-                    );
-                   nricFT.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadNF);
-           }
-       }
-       //nric back
-       function nricBack() {
-           var nricB = document.getElementById("nricB").files;
-           if (nricB.length > 0) {
-               var fileToLoadNB = nricB[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var nricBT = document.getElementById
-                    (
-                        "nricBT"
-                    );
-                   nricBT.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadNB);
-           }
-       }
-       //File 1
-       function file1() {
-           var f1 = document.getElementById("f1").files;
-           if (f1.length > 0) {
-               var fileToLoadf1 = f1[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f1T = document.getElementById
-                    (
-                        "f1T"
-                    );
-                   f1T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf1);
-           }
-       }
-
-       //File 2
-       function file2() {
-           var f2 = document.getElementById("f2").files;
-           if (f2.length > 0) {
-               var fileToLoadf2 = f2[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f2T = document.getElementById
-                    (
-                        "f2T"
-                    );
-                   f2T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf2);
-           }
-       }
-
-       //File 3
-       function file3() {
-           var f3 = document.getElementById("f3").files;
-           if (f3.length > 0) {
-               var fileToLoadf3 = f3[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f3T = document.getElementById
-                    (
-                        "f3T"
-                    );
-                   f3T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf3);
-           }
-       }
-
-       //File 4
-       function file4() {
-           var f4 = document.getElementById("f4").files;
-           if (f4.length > 0) {
-               var fileToLoadf4 = f4[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f4T = document.getElementById
-                    (
-                        "f4T"
-                    );
-                   f4T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf4);
-           }
-       }
-
-       //File 5
-       function file5() {
-           var f5 = document.getElementById("f5").files;
-           if (f5.length > 0) {
-               var fileToLoadf5 = f5[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f5T = document.getElementById
-                    (
-                        "f5T"
-                    );
-                   f5T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf5);
-           }
-       }
-
-       //File 6
-       function file6() {
-           var f6 = document.getElementById("f6").files;
-           if (f6.length > 0) {
-               var fileToLoadf6 = f6[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f6T = document.getElementById
-                    (
-                        "f6T"
-                    );
-                   f6T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf6);
-           }
-       }
-
-       //File 7
-       function file7() {
-           var f7 = document.getElementById("f7").files;
-           if (f7.length > 0) {
-               var fileToLoadf7 = f7[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f7T = document.getElementById
-                    (
-                        "f7T"
-                    );
-                   f7T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf7);
-           }
-       }
-
-       //File 8
-       function file8() {
-           var f8 = document.getElementById("f8").files;
-           if (f8.length > 0) {
-               var fileToLoadf8 = f8[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f8T = document.getElementById
-                    (
-                        "f8T"
-                    );
-                   f8T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf8);
-           }
-       }
-
-       //File 9
-       function file9() {
-           var f9 = document.getElementById("f9").files;
-           if (f9.length > 0) {
-               var fileToLoadf9 = f9[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f9T = document.getElementById
-            (
-                "f9T"
-            );
-                   f9T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf9);
-           }
-       }
-
-       //File 4
-       function file10() {
-           var f10 = document.getElementById("f10").files;
-           if (f10.length > 0) {
-               var fileToLoadf10 = f10[0];
-               var fileReader = new FileReader();
-               fileReader.onload = function (fileLoadedEvent) {
-                   var f10T = document.getElementById
-            (
-                "f10T"
-            );
-                   f10T.innerHTML = fileLoadedEvent.target.result;
-               };
-               fileReader.readAsDataURL(fileToLoadf10);
-           }
-       }
-       //*******************************************Upload documents*************************************************
     </script>
 
     <script>
@@ -1479,20 +1050,6 @@ margin: 0;
 
     </script>
 
-
-<script>
-
-
-
-</script>
-
-<script type="text/javascript">
-
-</script>
-
-<script type="text/javascript">
-
-</script>
 
     <script src="/js/materialize.js?1447605082"></script>
     <script src="/js/init.js?1449588580"></script>

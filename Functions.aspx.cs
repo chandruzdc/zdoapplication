@@ -379,7 +379,888 @@ public partial class Functions : System.Web.UI.Page
     }
     //Class end
 
-        
+
+    //file upload work start
+    [System.Web.Services.WebMethod]
+    public static string SaveNRICfront(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveNRICback(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile1(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile2(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile3(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile4(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile5(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile6(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile7(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile8(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile9(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string SaveFile10(string Based64BinaryString)
+    {
+        string result = "";
+        try
+        {
+            string format = "";
+            string path = HttpContext.Current.Server.MapPath("files/");
+            string name = DateTime.Now.ToString("hhmmss");
+
+            if (Based64BinaryString.Contains("data:application/pdf;base64,"))
+            {
+                format = "pdf";
+            }
+            if (Based64BinaryString.Contains("data:image/jpg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/jpeg;base64,"))
+            {
+                format = "jpg";
+            }
+            if (Based64BinaryString.Contains("data:image/png;base64,"))
+            {
+                format = "png";
+            }
+            if (Based64BinaryString.Contains("data:text/plain;base64,"))
+            {
+                format = "txt";
+            }
+
+            string str = Based64BinaryString.Replace("data:image/jpeg;base64,", " ");//jpg check
+            str = str.Replace("data:image/png;base64,", " ");//png check
+            str = str.Replace("data:application/pdf;base64,", " ");//pdf check
+            str = str.Replace("data:text/plain;base64,", " ");//text file check
+
+            byte[] data = Convert.FromBase64String(str);
+
+            if (format == "png")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".png");
+                var imgpath = "files/file" + name + ".png";
+                result = imgpath;
+            }
+            else if (format == "jpg")
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".jpg");
+                var imgpath = "files/file" + name + ".jpg";
+                result = imgpath;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(data, 0, data.Length);
+                ms.Write(data, 0, data.Length);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+                image.Save(path + "/file" + name + ".pdf");
+                var imgpath = "files/file" + name + ".pdf";
+                result = imgpath;
+            }
+        }
+        catch (Exception ex)
+        {
+            result = "Error : " + ex;
+        }
+        return result;
+    }
+
+    //file upload work end  
+    
+    
+
     [WebMethod]
     public static string mobile_App_Ret_Client(string dadmission_number, string dadmision_remarks_client, string status)
     {
@@ -525,13 +1406,10 @@ public static string updateAmendApplicationWork(string admission_number, string 
     File.WriteAllText(fileSavePath1, json);
     return "true";
 }
-
-
-
-
+        
 
     [WebMethod]
-public static string updateApplication(string admission_number, string admision_name, string admision_gender, string admision_nric, string admision_dob, string admision_application_date, string admision_occupation, string admision_contact, string admision_nok_name, string admision_nok_contact, string admision_pa_plan, string admision_exclusion_plan, string admision_pre_existing_condition, string admision_hign_bp, string admision_diabetes, string admision_high_cholesterol, string admision_pending_claims, string admision_cash_pay_mc, string admision_cause_complaint, string admision_sign_symptoms, string admision_preferred_date_admission, string admision_insurance_agent_id, string admision_insurance_agent_name, string admision_insurance_agent_contact, string admision_status, string status, string saveType, string submissionType, string appSave)
+    public static string updateApplication(string admission_number, string admision_name, string admision_gender, string admision_nric, string admision_dob, string admision_application_date, string admision_occupation, string admision_contact, string admision_nok_name, string admision_nok_contact, string admision_pa_plan, string admision_exclusion_plan, string admision_pre_existing_condition, string admision_hign_bp, string admision_diabetes, string admision_high_cholesterol, string admision_pending_claims, string admision_cash_pay_mc, string admision_cause_complaint, string admision_sign_symptoms, string admision_preferred_date_admission, string admision_insurance_agent_id, string admision_insurance_agent_name, string admision_insurance_agent_contact, string admision_status, string status, string saveType, string submissionType, string appSave)
     {
         string json = string.Empty;
         List<application> objlistapplication = new List<application>();
@@ -578,6 +1456,64 @@ public static string updateApplication(string admission_number, string admision_
                         loopdata.saveType = saveType;
                         loopdata.submissionType = submissionType;
                         loopdata.appSave = appSave;
+                        _data1 = loopdata;
+                    }
+                    else
+                    {
+                        _data1 = loopdata;
+                    }
+                    applicationlist.Add(_data1);
+                }
+            }
+        }
+        File.WriteAllText(fileSavePath1, string.Empty);
+        json = JsonConvert.SerializeObject(applicationlist.ToArray());
+        File.WriteAllText(fileSavePath1, json);
+        return "true";
+    }
+    
+
+    [WebMethod]
+    public static string update_ApplicationDocuments(string admission_number, string admision_nric_front_screen, string admision_nric_back_screen, string admision_policy_file1, string admision_policy_file2, string admision_policy_file3, string admision_policy_file4, string admision_policy_file5, string admision_policy_file6, string admision_policy_file7, string admision_policy_file8, string admision_policy_file9, string admision_policy_file10, string admision_status, string status, string saveType, string submissionType, string appSave, string admision_remarks_agent, string admision_remarks_admin)
+    {
+        string json = string.Empty;
+        List<application> objlistapplication = new List<application>();
+        List<application> objlistapplication1 = new List<application>();
+        List<application> applicationlist = new List<application>();
+        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
+        string data = File.ReadAllText(fileSavePath1);
+        if (data != "" && data != string.Empty && data != " ")
+        {
+            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
+            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
+            if (objlistapplication1.Count != 0)
+            {
+                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
+                foreach (application loopdata in objlistapplication)
+                {
+                    application _data1 = new application();
+                    if (loopdata.admission_number == admission_number)
+                    {
+                        loopdata.admision_nric_front_screen = admision_nric_front_screen;
+                        loopdata.admision_nric_back_screen = admision_nric_back_screen;
+                        loopdata.admision_policy_file1 = admision_policy_file1;
+                        loopdata.admision_policy_file2 = admision_policy_file2;
+                        loopdata.admision_policy_file3 = admision_policy_file3;
+                        loopdata.admision_policy_file4 = admision_policy_file4;
+                        loopdata.admision_policy_file5 = admision_policy_file5;
+                        loopdata.admision_policy_file6 = admision_policy_file6;
+                        loopdata.admision_policy_file7 = admision_policy_file7;
+                        loopdata.admision_policy_file8 = admision_policy_file8;
+                        loopdata.admision_policy_file9 = admision_policy_file9;
+                        loopdata.admision_policy_file10 = admision_policy_file10;
+                        loopdata.admision_remarks_admin = admision_remarks_admin;
+                        loopdata.admision_remarks_agent = admision_remarks_agent;
+                        loopdata.admision_status = admision_status;
+                        loopdata.status = status;
+                        loopdata.saveType = saveType;
+                        loopdata.submissionType = submissionType;
+                        loopdata.appSave = appSave;
+
                         _data1 = loopdata;
                     }
                     else
@@ -726,535 +1662,6 @@ public static string updateApplication(string admission_number, string admision_
     }
 
 
-    [WebMethod]
-    public static string update_ApplicationDocuments_nricFront(string admission_number, string nricFront, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_nric_front_screen = nricFront;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_nricBack(string admission_number, string nricBack, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_nric_back_screen = nricBack;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file1(string admission_number, string file1, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file1 = file1;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file2(string admission_number, string file2, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file2 = file2;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file3(string admission_number, string file3, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file3 = file3;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file4(string admission_number, string file4, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file4 = file4;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file5(string admission_number, string file5, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file5 = file5;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file6(string admission_number, string file6, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file6 = file6;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file7(string admission_number, string file7, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file7 = file7;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file8(string admission_number, string file8, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file8 = file8;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file9(string admission_number, string file9, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file9 = file9;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
-    [WebMethod]
-    public static string update_ApplicationDocuments_file10(string admission_number, string file10, string admision_status, string status, string saveType, string submissionType, string appSave)
-    {
-        string json = string.Empty;
-        List<application> objlistapplication = new List<application>();
-        List<application> objlistapplication1 = new List<application>();
-        List<application> applicationlist = new List<application>();
-        var fileSavePath1 = Path.Combine(HttpContext.Current.Server.MapPath("~/jsonfile/application.txt"));
-        string data = File.ReadAllText(fileSavePath1);
-        if (data != "" && data != string.Empty && data != " ")
-        {
-            objlistapplication1 = JsonConvert.DeserializeObject<List<application>>(data);
-            objlistapplication1 = (from m in objlistapplication1 select m).ToList();
-            if (objlistapplication1.Count != 0)
-            {
-                objlistapplication = JsonConvert.DeserializeObject<List<application>>(data);
-                foreach (application loopdata in objlistapplication)
-                {
-                    application _data1 = new application();
-                    if (loopdata.admission_number == admission_number)
-                    {
-                        loopdata.admision_policy_file10 = file10;
-                        loopdata.admision_status = admision_status;
-                        loopdata.status = status;
-                        loopdata.saveType = saveType;
-                        loopdata.submissionType = submissionType;
-                        loopdata.appSave = appSave;
-
-                        _data1 = loopdata;
-                    }
-                    else
-                    {
-                        _data1 = loopdata;
-                    }
-                    applicationlist.Add(_data1);
-                }
-            }
-        }
-        File.WriteAllText(fileSavePath1, string.Empty);
-        json = JsonConvert.SerializeObject(applicationlist.ToArray());
-        File.WriteAllText(fileSavePath1, json);
-        return "true";
-    }
-
     //send mail work 
     [WebMethod]
     public static List<application> sendEmailPdf(string admission_number)
@@ -1374,15 +1781,91 @@ public static string updateApplication(string admission_number, string admision_
                             byte[] bytes = memoryStream.ToArray();
                             memoryStream.Close();
                             
-                            string main1 = "hemachandru21@gmail.com";
+                            //string main1 = "sretherkrish@gmail.com";
+                            string main1 = "chandrubinaryarrows@gmail.com";
                             var un = "website@1migrate.net";
                             var pass = "Welcome123!@#";
                             MailMessage msg = new MailMessage();
                             msg.From = new MailAddress(un, "ZDO");
                             msg.To.Add(main1);
                             msg.Subject = "Mail From Site :Application form";
-                            msg.Body = "Test body message";
-                            msg.Attachments.Add(new Attachment(new MemoryStream(bytes), "myDemo.pdf"));
+
+
+                            string msgs = "";
+                            string furl = "http://test.zerodotone.net/";
+                            //string fdata = "";
+                            /*if (admision_nric_front_screen != "Nil") {
+                                string fdata1 = furl + admision_nric_front_screen;
+                                msgs = "<a href='" + fdata1 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_nric_back_screen != "Nil")
+                            {
+                                string fdata2 = furl + admision_nric_back_screen;
+                                msgs = "<a href='" + fdata2 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file1 != "Nil")
+                            {
+                                string fdata3 = furl + admision_policy_file1;
+                                msgs = "<a href='" + fdata3 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file2 != "Nil")
+                            {
+                                string fdata4 = furl + admision_policy_file2;
+                                msgs = "<a href='" + fdata4 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file3 != "Nil")
+                            {
+                                string fdata5 = furl + admision_policy_file3;
+                                msgs = "<a href='" + fdata5 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file4 != "Nil")
+                            {
+                                string fdata6 = furl + admision_policy_file4;
+                                msgs = "<a href='" + fdata6 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file5 != "Nil")
+                            {
+                                string fdata7 = furl + admision_policy_file5;
+                                msgs = "<a href='" + fdata7 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file6 != "Nil")
+                            {
+                                string fdata8 = furl + admision_policy_file6;
+                                msgs = "<a href='" + fdata8 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file7 != "Nil")
+                            {
+                                string fdata9 = furl + admision_policy_file7;
+                                msgs = "<a href='" + fdata9 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file8 != "Nil")
+                            {
+                                string fdata10 = furl + admision_policy_file8;
+                                msgs = "<a href='" + fdata10 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file9 != "Nil")
+                            {
+                                string fdata11 = furl + admision_policy_file9;
+                                msgs = "<a href='" + fdata11 + "' download><b>Download</b></a></br>";
+                            }
+                            else if (admision_policy_file10 != "Nil")
+                            {
+                                string fdata12 = furl + admision_policy_file10;
+                                msgs = "<a href='" + fdata12 + "' download><b>Download</b></a></br>";
+                            }*/
+                            //<a href='" + fdata1 + "' download><b>Download</b></a></br>
+
+                            string fdata1 = furl + admision_nric_front_screen;
+                            string fdata2 = furl + admision_nric_back_screen;
+                            string fdata3 = furl + admision_policy_file1;
+
+                            msg.Body = "Test body message<br><br><table>"
+                                        + "<tr><td><a href='" + fdata1 + "' download><b>Download NRIC Front</b></a></br></br></td></tr>"
+                            +"<tr><td><a href='" + fdata2 + "' download><b>Download NRIC Back</b></a></br></br></td></tr>"
+                            + "<tr><td><a href='" + fdata3 + "' download><b>Download IC Document</b></a></br></br></td></tr></table>";
+
+                            msg.Attachments.Add(new Attachment(new MemoryStream(bytes), "Application.pdf"));
+
                             msg.IsBodyHtml = true;
                             SmtpClient smtp = new SmtpClient();
                             smtp.Host = "relay-hosting.secureserver.net";
@@ -1412,7 +1895,7 @@ string main1 = usersendEmail ;
         msg.Subject = "Mail From Site : Application form URL";
         msg.Body = "<br><br><div style='background-color: white;padding: 25px;border: 2px solid navy;margin: 25px;color:black;'><center><h1>Application URL</h1><br><br><table border='1' style='border-collapse: collapse;'> " +
                    "<table border='1' style='border-collapse: collapse;'><tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Name : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentSessionName + " </td></tr>" +
-                 //  "<tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Phone  : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentPh + "  </td></tr>" +
+                   "<tr><td style='padding-top:10px;padding-bottem:10px;'>Agent Phone  : </td><td style='padding-top:10px;padding-bottem:10px;'>" + agentPh + "  </td></tr>" +
                    "<tr><td style='padding-top:10px;padding-bottem:10px;'>URL : </td><td style='padding-top:10px;padding-bottem:10px;'>" + url + "</td></tr>" +
                    "<table></center></div><br><br><br>";
         msg.IsBodyHtml = true;

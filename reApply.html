@@ -49,7 +49,7 @@ margin: 0;
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
                     <li>
-                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName">Profile Name</span><i class="material-icons right">arrow_drop_down</i></a>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
                         <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
                             <li><a href="index.html">LOG OUT</a></li>
                         </ul>
@@ -149,6 +149,11 @@ margin: 0;
                                     <p id="e_txt_highCol">
 
                                     </p><br>
+                                    <p>
+                                    <h6>Any of the above is Yes, date of diagnosis</h6>
+                                    <input class="datepicker_dod" id="Text1">
+                               
+                               </p><br />
                                     <p id="e_txt_Pending">
 
                                     </p><br>
@@ -202,7 +207,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>NRIC FRONT</label><br>
-                                            <input type="file" id="nricF" onchange="nricFront();">
+                                            <input type="file" id="nricF">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -217,7 +222,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>NRIC BACK</label><br>
-                                            <input type="file" id="nricB" onchange="nricBack();">
+                                            <input type="file" id="nricB">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -235,7 +240,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>Document 1</label><br>
-                                            <input type="file" id="f1" onchange="file1();">
+                                            <input type="file" id="f1">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -251,7 +256,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>Document 2</label><br>
-                                            <input type="file" id="f2" onchange="file2();">
+                                            <input type="file" id="f2">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -267,7 +272,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>Document 3</label><br>
-                                            <input type="file" id="f3" onchange="file3();">
+                                            <input type="file" id="f3">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -283,7 +288,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>Document 4</label><br>
-                                            <input type="file" id="f4" onchange="file4();">
+                                            <input type="file" id="f4">
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
@@ -304,7 +309,7 @@ margin: 0;
                                     <div class="col m7 s12">
                                         <div class="file-field input-field">
                                             <label>Document 5</label><br>
-                                            <input type="file" id="f5"  onchange="file5();">
+                                            <input type="file" id="f5">
                                         <div class=" file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -325,7 +330,7 @@ margin: 0;
                                 <div class="col m7 s12">
                                     <div class="file-field input-field">
                                         <label>Document 6</label><br>
-                                        <input type="file" id="f6"  onchange="file6();">
+                                        <input type="file" id="f6">
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -346,7 +351,7 @@ margin: 0;
                                 <div class="col m7 s12">
                                     <div class="file-field input-field">
                                         <label>Document 7</label><br>
-                                        <input type="file" id="f7"  onchange="file7();">
+                                        <input type="file" id="f7">
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -367,7 +372,7 @@ margin: 0;
                                 <div class="col m7 s12">
                                     <div class="file-field input-field">
                                         <label>Document 8</label><br>
-                                        <input type="file" id="f8"  onchange="file8();">
+                                        <input type="file" id="f8">
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -388,7 +393,7 @@ margin: 0;
                                 <div class="col m7 s12">
                                     <div class="file-field input-field">
                                         <label>Document 9</label><br>
-                                        <input type="file" id="f9"  onchange="file9();">
+                                        <input type="file" id="f9">
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -409,7 +414,7 @@ margin: 0;
                                 <div class="col m7 s12">
                                     <div class="file-field input-field">
                                         <label>Document 10</label><br>
-                                        <input type="file" id="f10" onchange="file10();">
+                                        <input type="file" id="f10">
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text">
                                         </div>
@@ -418,6 +423,21 @@ margin: 0;
                             </div>
                         </div>
                     </div>
+
+
+                            <p id="nricFT" style="display:none">Nil</p>
+                            <p id="nricBT" style="display:none">Nil</p>
+                            <p id="f1T" style="display:none">Nil</p>
+                            <p id="f2T" style="display:none">Nil</p>
+                            <p id="f3T" style="display:none">Nil</p>
+                            <p id="f4T" style="display:none">Nil</p>
+                            <p id="f5T" style="display:none">Nil</p>
+                            <p id="f6T" style="display:none">Nil</p>
+                            <p id="f7T" style="display:none">Nil</p>
+                            <p id="f8T" style="display:none">Nil</p>
+                            <p id="f9T" style="display:none">Nil</p>
+                            <p id="f10T" style="display:none">Nil</p>
+
 
                     <center><a type='submit' id='btn_compSave' class='col m8 btn blue lighten-1'>Submit</a></center>
                     <br>
@@ -438,325 +458,338 @@ margin: 0;
 
 
     <script>
-         $(document).ready(function () {
-             var user_id = localStorage.getItem('uid');
-             $('ul.tabs').tabs();
-             getApplicationCount();
-             getSessionName(user_id)
-             getToday()
+        $(document).ready(function () {
+            var user_id = localStorage.getItem('uid');
+            $('ul.tabs').tabs();
+            getApplicationCount();
+            getSessionName(user_id)
+            getToday()
 
-             $("#gifer").hide();
+            $("#gifer").hide();
 
-             $("#img5").hide();
-             $("#img6").hide();
-             $("#img7").hide();
-             $("#img8").hide();
-             $("#img9").hide();
-             $("#img10").hide();
-             $("#a4").click(function () {
-                 $("#img5").show();
-                 $("#a4").hide();
-             });
+            $("#img5").hide();
+            $("#img6").hide();
+            $("#img7").hide();
+            $("#img8").hide();
+            $("#img9").hide();
+            $("#img10").hide();
+            $("#a4").click(function () {
+                $("#img5").show();
+                $("#a4").hide();
+            });
 
-             $("#a5").click(function () {
-                 $("#img6").show();
-                 $("#a5").hide();
-             });
-             $("#a6").click(function () {
-                 $("#img7").show();
-                 $("#a6").hide();
-             });
-             $("#a7").click(function () {
-                 $("#img8").show();
-                 $("#a7").hide();
-             });
-             $("#a8").click(function () {
-                 $("#img9").show();
-                 $("#a8").hide();
-             });
-             $("#a9").click(function () {
-                 $("#img10").show();
-                 $("#a9").hide();
-             });
+            $("#a5").click(function () {
+                $("#img6").show();
+                $("#a5").hide();
+            });
+            $("#a6").click(function () {
+                $("#img7").show();
+                $("#a6").hide();
+            });
+            $("#a7").click(function () {
+                $("#img8").show();
+                $("#a7").hide();
+            });
+            $("#a8").click(function () {
+                $("#img9").show();
+                $("#a8").hide();
+            });
+            $("#a9").click(function () {
+                $("#img10").show();
+                $("#a9").hide();
+            });
 
-             getSessionName(user_id);
+            getSessionName(user_id);
 
-             getDraftApplication();
+            getDraftApplication();
 
-             $("#btn_compSave").click(function () {
-                 var admision_slno = localStorage.getItem('totApp'); //no val
-                 var user_id = localStorage.getItem('uid');
+            $("#btn_compSave").click(function () {
+                var admision_slno = localStorage.getItem('totApp'); //no val
+                var user_id = localStorage.getItem('uid');
 
-                 //alert(user_id);
+                var admission_number = $('#appNum').text(); //no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val
+                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                var admision_remarks_admin = "Nil"; //no val    
+                var admision_remarks_agent = $("#Span24").val();
+                //---------------previous-
+                var nricF = $('#nricF').val();
+                var nricB = $('#nricB').val();
+                var f1 = $('#f1').val();
+                var f2 = $('#f2').val();
+                var f3 = $('#f3').val();
+                var f4 = $('#f4').val();
 
-                 var admission_number = $('#appNum').text(); //no val
-                 var admision_name = $('#txt_name').val();
-                 var admision_gender = $('input[name="gender"]:checked').val();
-                 var admision_nric = $("#txt_NRIC").val();
-                 var admision_dob = $("#txt_dob").val();
-                 var admision_application_date = $("#appDate").text();  //no val
-                 var admision_time = (new Date().toString("hh:mm tt")); //no val
-                 var admision_occupation = $("#txt_occup").val();
-                 var admision_contact = $("#txt_cont").val();
-                 var admision_nok_name = $("#txt_knok").val();
-                 var admision_nok_contact = $("#txt_nok").val();
-                 var admision_pa_plan = $("#txt_plan").val();
-                 var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
-                 var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
-                 var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
-                 var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
-                 var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
-                 var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
-                 var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
-                 var admision_cause_complaint = $("#txt_compliant").val();
-                 var admision_sign_symptoms = $("#txt_signSymp").val();
-                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                 var admision_insurance_agent_id = user_id; //no val
-                 var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                 var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                 var admision_remarks_admin = "Nil"; //no val
-                 var admision_remarks_agent = "Nil"; //no val
-                 var admision_status = "Pending"; //no val
-                 var status = "1"; //no val
-                 var saveType = "web";
-                 var subType = localStorage.getItem('subType');
-                 var submissionType = subType;
-                 //var appSave = "Draft";
-                 //---------------previous-
-                 var nricF = $('#nricF').val();
-                 var nricB = $('#nricB').val();
-                 var f1 = $('#f1').val();
-                 var f2 = $('#f2').val();
-                 var f3 = $('#f3').val();
-                 var f4 = $('#f4').val();
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $('ul.tabs').tabs('select_tab', 'test1');
+                    $("#txt_DOA").focus();
+                } else if (admision_remarks_agent == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#Span24").focus();
+                }
 
-                 if (admision_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_name").focus();
-                 } else if (admision_gender == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_nric == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_NRIC").focus();
-                 } else if (admision_dob == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_dob").focus();
-                 } else if (admision_occupation == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_occup").focus();
-                 } else if (admision_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_cont").focus();
-                 } else if (admision_nok_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_knok").focus();
-                 } else if (admision_nok_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_nok").focus();
-                 } else if (admision_pa_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_plan").focus();
-                 } else if (admision_exclusion_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_pre_existing_condition == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_hign_bp == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_diabetes == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_high_cholesterol == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_pending_claims == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_cash_pay_mc == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                 } else if (admision_cause_complaint == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_compliant").focus();
-                 } else if (admision_sign_symptoms == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_signSymp").focus();
-                 } else if (admision_preferred_date_admission == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $('ul.tabs').tabs('select_tab', 'test1');
-                     $("#txt_DOA").focus();
-                 }
-                 //----------------prev
-                 else if (nricF == "") {
-                     Materialize.toast('Please upload NRIC files', 4000);
-                 } else if (nricB == "") {
-                     Materialize.toast('Please upload NRIC files', 4000);
-                 } else if (f1 == "") {
-                     Materialize.toast('Please upload files', 4000);
-                 }
-                 else {
-                     $("#formApplication").hide();
-                     $("#gifer").show();
+                //----------------prev
+                else if (nricF == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (nricB == "") {
+                    Materialize.toast('Please upload NRIC files', 4000);
+                } else if (f1 == "") {
+                    Materialize.toast('Please upload files', 4000);
+                }
+                else {
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+                    var admission_number = localStorage.getItem('admission_number');
+                    var nricF = $('#nricFT').text();
+                    var nricB = $('#nricBT').text();
+                    var f1 = $('#f1T').text();
+                    var f2 = $('#f2T').text();
+                    var f3 = $('#f3T').text();
+                    var f4 = $('#f4T').text();
+                    var f5 = $('#f5T').text();
+                    var f6 = $('#f6T').text();
+                    var f7 = $('#f7T').text();
+                    var f8 = $('#f8T').text();
+                    var f9 = $('#f9T').text();
+                    var f10 = $('#f10T').text();
 
-                     var admission_number = localStorage.getItem('admission_number');
+                    var admision_status = "Pending";
+                    var status = "1";
+                    var saveType = "web";
+                    var subType = localStorage.getItem('subType');
+                    var submissionType = subType;
+                    var appSave = "Complete";
 
-                     var nricFront = "Demo file";
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/update_ApplicationDocuments",
+                        data: "{admission_number :'" + admission_number + "',admision_nric_front_screen :'" + nricF + "', admision_nric_back_screen :'" + nricB + "' , admision_policy_file1 :'" + f1 + "', admision_policy_file2 :'" + f2 + "', admision_policy_file3 :'" + f3 + "', admision_policy_file4 :'" + f4 + "', admision_policy_file5 :'" + f5 + "', admision_policy_file6 :'" + f6 + "', admision_policy_file7 :'" + f7 + "', admision_policy_file8 :'" + f8 + "', admision_policy_file9 :'" + f9 + "', admision_policy_file10 :'" + f10 + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "', admision_remarks_agent :'" + admision_remarks_agent + "', admision_remarks_admin :'" + admision_remarks_admin + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            $("#gifer").hide();
+                            $("#formApplication").show();
 
-                     var appSave = "Complete";
-                     $.ajax({
-                         type: "POST",
-                         contentType: "application/json; charset=utf-8",
-                         url: "Functions.aspx/update_ApplicationDocuments_nricFront",
-                         data: "{admission_number :'" + admission_number + "',nricFront :'" + nricFront + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                         dataType: "json",
-                         success: function (data) {
-                             $("#gifer").hide();
-                             $("#formApplication").show();
+                            alert("Successfully applied the application..!");
+                            window.location = "dashboad.html";
+                        }
+                    });
+                }
 
-                             alert("Successfully applied the application..!");
-                             window.location = "dashboad.html";
-                         }
-                     });
-                 }
-
-             });
-
-
-
-             $("#btn_Submit").click(function () {
-                 var admision_slno = localStorage.getItem('totApp');//no val
-                 var admission_number = $('#appNum').text();//no val
-                 var admision_name = $('#txt_name').val();
-                 var admision_gender = $('input[name="gender"]:checked').val();
-                 var admision_nric = $("#txt_NRIC").val();
-                 var admision_dob = $("#txt_dob").val();
-                 var admision_application_date = $("#appDate").text();  //no val                   
-                 var admision_time = (new Date().toString("hh:mm tt"));//no val
-                 var admision_occupation = $("#txt_occup").val();
-                 var admision_contact = $("#txt_cont").val();
-                 var admision_nok_name = $("#txt_knok").val();
-                 var admision_nok_contact = $("#txt_nok").val();
-                 var admision_pa_plan = $("#txt_plan").val();
-                 var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
-                 var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
-                 var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
-                 var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
-                 var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
-                 var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
-                 var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
-                 var admision_cause_complaint = $("#txt_compliant").val();
-                 var admision_sign_symptoms = $("#txt_signSymp").val();
-                 var admision_preferred_date_admission = $("#txt_DOA").val();
-                 var admision_insurance_agent_id = user_id;//no val
-                 var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
-                 var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
-                 var admision_remarks_admin = "Nil";//no val
-                 var admision_remarks_agent = "Nil";//no val 
-                 var admision_status = "New";//no val
-                 var status = "1";//no val
-                 var saveType = "web";
-                 var subType = localStorage.getItem('subType');
-                 var submissionType = subType;
-                 var appSave = "Draft";
-
-                 if (admision_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_name").focus();
-                 } else if (admision_gender == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_nric == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_NRIC").focus();
-                 } else if (admision_dob == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_dob").focus();
-                 } else if (admision_occupation == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_occup").focus();
-                 } else if (admision_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_cont").focus();
-                 } else if (admision_nok_name == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_knok").focus();
-                 } else if (admision_nok_contact == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_nok").focus();
-                 } else if (admision_pa_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_plan").focus();
-                 } else if (admision_exclusion_plan == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pre_existing_condition == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_hign_bp == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_diabetes == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_high_cholesterol == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_pending_claims == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_cash_pay_mc == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                 } else if (admision_cause_complaint == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_compliant").focus();
-                 } else if (admision_sign_symptoms == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_signSymp").focus();
-                 } else if (admision_preferred_date_admission == "") {
-                     Materialize.toast('Please fill all mandatory fields', 4000);
-                     $("#txt_DOA").focus();
-                 } else {
-
-                     $("#formApplication").hide();
-                     $("#gifer").show();
+            });
 
 
-                     $.ajax({
-                         type: "POST",
-                         contentType: "application/json; charset=utf-8",
-                         url: "Functions.aspx/updateApplication",
-                         data: "{admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
-                         dataType: "json",
-                         success: function (data) {
-                             if (data.d === "true") {
-                                 $("#gifer").hide();
-                                 $("#formApplication").show();
-                                 $("#btn_DraftSave").hide();
-                                 localStorage.setItem('admission_number', admission_number);
-                                 $('ul.tabs').tabs('select_tab', 'test2');
-                             } else {
-                                 //alert("Add Error...");
-                             }
-                         }
-                     });
-                 }
-             });
 
-             $("#insAgnetName").click(function () {
-                 Materialize.toast('You cannot edit the field..!', 4000);
-             });
+            $("#btn_Submit").click(function () {
+                var admision_slno = localStorage.getItem('totApp'); //no val
+                var admission_number = $('#appNum').text(); //no val
+                var admision_name = $('#txt_name').val();
+                var admision_gender = $('input[name="gender"]:checked').val();
+                var admision_nric = $("#txt_NRIC").val();
+                var admision_dob = $("#txt_dob").val();
+                var admision_application_date = $("#appDate").text();  //no val                   
+                var admision_time = (new Date().toString("hh:mm tt")); //no val
+                var admision_occupation = $("#txt_occup").val();
+                var admision_contact = $("#txt_cont").val();
+                var admision_nok_name = $("#txt_knok").val();
+                var admision_nok_contact = $("#txt_nok").val();
+                var admision_pa_plan = $("#txt_plan").val();
+                var admision_exclusion_plan = $('input[name="txt_AnyExc"]:checked').val();
+                var admision_pre_existing_condition = $('input[name="txt_condition"]:checked').val();
+                var admision_hign_bp = $('input[name="txt_Pressure"]:checked').val();
+                var admision_diabetes = $('input[name="txt_Diabetes"]:checked').val();
+                var admision_high_cholesterol = $('input[name="txt_highCol"]:checked').val();
+                var admision_pending_claims = $('input[name="txt_Pending"]:checked').val();
+                var admision_cash_pay_mc = $('input[name="MC_pressure"]:checked').val();
+                var admision_cause_complaint = $("#txt_compliant").val();
+                var admision_sign_symptoms = $("#txt_signSymp").val();
+                var admision_preferred_date_admission = $("#txt_DOA").val();
+                var admision_insurance_agent_id = user_id; //no val
+                var admision_insurance_agent_name = $("#insAgnetName").val(); //no val
+                var admision_insurance_agent_contact = $("#insAgnetContact").val(); //no val
+                var admision_remarks_admin = "Nil"; //no val
+                var admision_remarks_agent = $("#Span24").val();
+                var admision_status = "New"; //no val
+                var status = "1"; //no val
+                var saveType = "web";
+                var subType = localStorage.getItem('subType');
+                var submissionType = subType;
+                var appSave = "Draft";
 
-             $("#insAgnetContact").click(function () {
-                 Materialize.toast('You cannot edit the field..!', 4000);
-             });
+                if (admision_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_name").focus();
+                } else if (admision_gender == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_nric == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_NRIC").focus();
+                } else if (admision_dob == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_dob").focus();
+                } else if (admision_occupation == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_occup").focus();
+                } else if (admision_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_cont").focus();
+                } else if (admision_nok_name == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_knok").focus();
+                } else if (admision_nok_contact == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_nok").focus();
+                } else if (admision_pa_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_plan").focus();
+                } else if (admision_exclusion_plan == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pre_existing_condition == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_hign_bp == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_diabetes == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_high_cholesterol == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_pending_claims == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cash_pay_mc == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                } else if (admision_cause_complaint == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_compliant").focus();
+                } else if (admision_sign_symptoms == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_signSymp").focus();
+                } else if (admision_preferred_date_admission == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#txt_DOA").focus();
+                } else if (admision_remarks_agent == "") {
+                    Materialize.toast('Please fill all mandatory fields', 4000);
+                    $("#Span24").focus();
+                } else {
 
-         });
+                    $("#formApplication").hide();
+                    $("#gifer").show();
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Functions.aspx/updateApplication",
+                        data: "{admission_number :'" + admission_number + "', admision_name :'" + admision_name + "', admision_gender :'" + admision_gender + "', admision_nric :'" + admision_nric + "', admision_dob :'" + admision_dob + "', admision_application_date :'" + admision_application_date + "', admision_occupation:'" + admision_occupation + "', admision_contact:'" + admision_contact + "',admision_nok_name :'" + admision_nok_name + "', admision_nok_contact :'" + admision_nok_contact + "', admision_pa_plan :'" + admision_pa_plan + "', admision_exclusion_plan :'" + admision_exclusion_plan + "', admision_pre_existing_condition :'" + admision_pre_existing_condition + "', admision_hign_bp :'" + admision_hign_bp + "', admision_diabetes :'" + admision_diabetes + "', admision_high_cholesterol :'" + admision_high_cholesterol + "', admision_pending_claims:'" + admision_pending_claims + "', admision_cash_pay_mc:'" + admision_cash_pay_mc + "', admision_cause_complaint :'" + admision_cause_complaint + "', admision_sign_symptoms :'" + admision_sign_symptoms + "', admision_preferred_date_admission :'" + admision_preferred_date_admission + "', admision_insurance_agent_id :'" + admision_insurance_agent_id + "', admision_insurance_agent_name :'" + admision_insurance_agent_name + "', admision_insurance_agent_contact :'" + admision_insurance_agent_contact + "', admision_status :'" + admision_status + "', status :'" + status + "', saveType :'" + saveType + "', submissionType :'" + submissionType + "', appSave :'" + appSave + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.d === "true") {
+                                $("#gifer").hide();
+                                $("#formApplication").show();
+                                $("#btn_DraftSave").hide();
+                                localStorage.setItem('admission_number', admission_number);
+                                $('ul.tabs').tabs('select_tab', 'test2');
+                            } else {
+                                //alert("Add Error...");
+                            }
+                        }
+                    });
+                }
+            });
+
+            $("#insAgnetName").click(function () {
+                Materialize.toast('You cannot edit the field..!', 4000);
+            });
+
+            $("#insAgnetContact").click(function () {
+                Materialize.toast('You cannot edit the field..!', 4000);
+            });
+
+        });
     </script>
 
     <script>
@@ -1334,7 +1367,7 @@ margin: 0;
                      } else if (data.d[0].admision_gender == "Female") {
                          $("#e_gender").append('<h6>Gender*</h6><br>' +
                              '<input id="Mal" type="radio" name="gender" value="Male">' +
-                             '<label for="Mal">Male</label><br><br>' +
+                             '<label for="Mal">Male</label>' +
                              '<br><br><input id="Fem" type="radio" name="gender" value="Female" checked="checked">' +
                              '<label for="Fem">Female</label>');
                      }
@@ -1372,13 +1405,13 @@ margin: 0;
                              '<label for="txt_medicine">No</label>');
                      }
                      if (data.d[0].admision_hign_bp == "Yes") {
-                         $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6><br>' +
+                         $("#e_txt_Pressure").append('<h6>High Blood Pressure : *</h6><br>' +
                              '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes" checked="checked">' +
                              '<label for="txt_Blood">Yes</label><br><br>' +
                              '<input id="txt_Pressures" type="radio" name="txt_Pressure" value="No">' +
                              '<label for="txt_Pressures">No</label>');
                      } else if (data.d[0].admision_hign_bp == "No") {
-                         $("#e_txt_Pressure").append('<h6>Any of the above is Yes, date of diagnosis</h6><h6>High Blood Pressure : *</h6>' +
+                         $("#e_txt_Pressure").append('<h6>High Blood Pressure : *</h6>' +
                              '<input id="txt_Blood" type="radio" name="txt_Pressure" value="Yes">' +
                              '<label for="txt_Blood">Yes</label><br><br>' +
                              '<input id="txt_Pressures" type="radio" name="txt_Pressure" value="No" checked="checked">' +

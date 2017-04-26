@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -41,7 +41,7 @@
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
                     <li>
-                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName">Profile Name</span><i class="material-icons right">arrow_drop_down</i></a>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
                         <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
                             <li><a href="index.html">LOG OUT</a></li>
                         </ul>
@@ -68,7 +68,7 @@
                         <p style="text-align: left;color:black;font-weight:bold;">APPLICATION NUMBER : <span id="Span25"></span></p>
                     </div>
                     <div class="input-field col m4 s12">
-                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track">Amend</span></p>
+                        <p style="color:black;font-weight:bold;font-family: " Helvetica Neue";" class="apl_sta">APPLICATION STATUS : <span id="appStatus_track"></span></p>
                     </div>
                     <div class="input-field col m4 s12">
                         <p style="text-align: right;color:black;font-weight:bold;">APPLICATION DATE : <span id="Span26"></span></p>
@@ -548,7 +548,7 @@
 
             $("#btn_resend").click(function () {
                 var admission_number = localStorage.getItem('admission_number');
-                alert(admission_number);
+                //alert(admission_number);
                 var client_status = $("#Textarea1").val();
                 var status = "R";
 
@@ -1113,7 +1113,8 @@
                 dataType: "json",
                 async: false,
                 success: function (data) {
-                    //alert(booking_id);
+                    //alert(booking_id);    
+                    $("#appStatus_track").empty();
                     $("#Span0").empty();
                     $("#Span1").empty();
                     $("#Span2").empty();
@@ -1139,6 +1140,7 @@
                     $("#Span26").empty();
                     $("#adminRemark").empty();
 
+                    $("#appStatus_track").append(data.d[0].admision_status);
                     $("#Span25").append(data.d[0].admission_number);
                     $("#Span26").append(data.d[0].admision_application_date);
                     $("#Span0").append(data.d[0].admision_name);

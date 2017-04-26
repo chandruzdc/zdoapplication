@@ -51,9 +51,10 @@
 </head>
 <body>
     <!--<div id="head"></div>-->
-    <!--<div id="gifer">
+    <div id="gifer">
         <center><img src="http://portal.mypinkbooks.com/images/loading.gif" class="responsive-img" /></center>
-    </div>-->
+    </div>
+    
 
     <div id="formApplication">
 
@@ -64,7 +65,7 @@
                     <li><a href="dashboad.html">DASHBOAD</a></li>
                     <li><a href="client_list.html">CLIENTS</a></li>
                     <li>
-                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName">Profile Name</span><i class="material-icons right">arrow_drop_down</i></a>
+                        <a class="dropdown-button" data-activates="Sales_agent" data-beloworigin="true" href="javascript:;"><span id="SesName"></span><i class="material-icons right">arrow_drop_down</i></a>
                         <ul id="Sales_agent" class="dropdown-content" style="width: 191px; position: absolute; top: 64px; left: 619.875px; opacity: 1; display: none;">
                             <li><a href="index.html">LOG OUT</a></li>
                         </ul>
@@ -269,7 +270,8 @@
                 var user_id = localStorage.getItem('uid');
                 $("#userId").append(user_id);
 
-               // $("#gifer").hide();
+                $("#gifer").hide();
+
 
                 getApplication(user_id);
 
@@ -543,6 +545,7 @@
 
 
             function getApplication(user_id) {
+                //spinnerShow();
 
                 var currentDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
                 var day = currentDate.getDate()
@@ -569,6 +572,7 @@
                     data: "{dagent_id:'" + user_id + "'}",
                     dataType: "json",
                     success: function (data) {
+                        spinnerHide();
                         $("#notiPan").empty();
                         $("#bndNotify").empty();
                         $("#bndReci").empty();
@@ -636,11 +640,9 @@
                         for (var i = 0; i < data.d.length; i++) {
                             if (data.d[i].admision_application_date >= from_date && data.d[i].admision_application_date <= to_date) {
                                 count++;
-                            } else {
-                                count = 0;
                             }
-                            //alert(count);
                         }
+                        //alert(count);
                         $("#bndSubmission").append(count);
                     },
                     error: function (result) {

@@ -1781,8 +1781,8 @@ public static string updateAmendApplicationWork(string admission_number, string 
                             byte[] bytes = memoryStream.ToArray();
                             memoryStream.Close();
                             
-                            //string main1 = "sretherkrish@gmail.com";
-                            string main1 = "chandrubinaryarrows@gmail.com";
+                            string main1 = "sretherkrish@gmail.com";
+                           // string main1 = "chandrubinaryarrows@gmail.com";
                             var un = "website@1migrate.net";
                             var pass = "Welcome123!@#";
                             MailMessage msg = new MailMessage();
